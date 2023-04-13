@@ -1,4 +1,4 @@
-package com.crm.crm.entity;
+package com.crm.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.sql.Timestamp;
@@ -11,8 +11,7 @@ import javax.persistence.*;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
-public class Customer {
-  
+public class Staff {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int ID;
@@ -24,6 +23,16 @@ public class Customer {
   public void setID(int value) {
     this.ID = value;
   }
+  /* 
+  private int invoiceID;
+
+  public int getInvoiceID() {
+    return invoiceID;
+  }
+
+  public void setInvoiceID(int value) {
+    this.invoiceID = value;
+  } */
 
   private String first_Name;
 
@@ -55,16 +64,6 @@ public class Customer {
     this.email = value;
   }
 
-  private Integer phone;
-
-  public Integer getPhone() {
-    return phone;
-  }
-
-  public void setPhone(Integer value) {
-    this.phone = value;
-  }
-
   private Character active;
 
   public Character getActive() {
@@ -75,14 +74,34 @@ public class Customer {
     this.active = value;
   }
 
-  private Timestamp create_Date;
+  private String username;
 
-  public Timestamp getCreate_Date() {
-    return create_Date;
+  public String getUsername() {
+    return username;
   }
 
-  public void setCreate_Date(Timestamp value) {
-    this.create_Date = value;
+  public void setUsername(String value) {
+    this.username = value;
+  }
+
+  private String password;
+
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String value) {
+    this.password = value;
+  }
+
+  private String pictureURL;
+
+  public String getPictureURL() {
+    return pictureURL;
+  }
+
+  public void setPictureURL(String value) {
+    this.pictureURL = value;
   }
 
   private Timestamp last_Update;
@@ -105,24 +124,24 @@ public class Customer {
     this.addressId = value;
   }
 
-/*   private int[] invoiceIds;
+ /*  private Rental[] rental;
 
-  public int[] getInvoiceIds() {
-    return invoiceIds;
-  }
-
-  public void setInvoiceIds(int[] value) {
-    this.invoiceIds = value;
-  }
-
-  private int[] rental;
-
-  public int[] getRental() {
+  public Rental[] getRental() {
     return rental;
   }
 
-  public void setRental(int[] value) {
+  public void setRental(Rental[] value) {
     this.rental = value;
   } */
 
+/*   private Invoice[] invoice;
+
+  public Invoice[] getInvoice() {
+    return invoice;
+  }
+
+  public void setInvoice(Invoice[] value) {
+    this.invoice = value;
+  }
+ */
 }

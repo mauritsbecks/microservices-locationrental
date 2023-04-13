@@ -1,4 +1,4 @@
-package com.crm.crm.entity;
+package soa.location.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.sql.Timestamp;

@@ -1,4 +1,4 @@
-package soa.location.model;
+package com.crm.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.sql.Timestamp;
@@ -104,7 +104,7 @@ public class Location {
   public void setLast_Update(Timestamp value) {
     this.last_Update = value;
   }
-/* 
+
   private Location_Category[] location_Category;
 
   public Location_Category[] getLocation_Category() {
@@ -123,6 +123,6 @@ public class Location {
 
   public void setInventory(Inventory[] value) {
     this.inventory = value;
-  } */
+  }
 
 }

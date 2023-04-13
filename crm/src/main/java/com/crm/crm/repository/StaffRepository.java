@@ -1,15 +1,15 @@
 package com.crm.crm.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import com.crm.crm.entity.Customer;
+import com.crm.crm.model.Staff;
 
 import java.util.List;
 
-public interface CustomerRepository extends CrudRepository<Customer, Integer> {
+public interface StaffRepository extends CrudRepository<Staff, Integer> {
 
-    List<Customer> findAll();
+    List<Staff> findAll();
 
-    Customer save(Customer customer);
+    Staff save(Staff staff);
 
      //Finds a Customer object with the specified id.
      //Customer findById(Long id);

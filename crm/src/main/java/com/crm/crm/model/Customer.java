@@ -1,4 +1,4 @@
-package com.crm.crm.entity;
+package com.crm.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.sql.Timestamp;
