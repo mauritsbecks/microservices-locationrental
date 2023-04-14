@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
+<<<<<<< HEAD
 public class Location {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,6 +37,12 @@ public class Location {
   }
 
   private String description;
+=======
+public class Location implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+>>>>>>> 3a7a2284ca75d721345cbb91173cefbe2f35ece9
 
   public String getDescription() {
     return description;
