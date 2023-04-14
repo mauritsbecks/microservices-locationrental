@@ -11,8 +11,8 @@ VALUES
 
 INSERT INTO Customer(ID, AddressID, First_Name, Last_Name, Email, Phone, Active, Create_Date, Last_Update) 
 VALUES 
-    (1, 101, 'Maurits', 'van Vliet', 'maurits@exampe.com', 0628244529, 'Y', timestamp '2023-04-12 09:05:00', timestamp '2023-04-13 09:05:00'),
-    (2, 102, 'Arthur', 'van Vliet', 'arthur@exampe.com', 0628244529, 'Y', timestamp '2023-04-12 19:05:00', timestamp '2023-04-13 09:25:00'),
+    (1, 101, 'Maurits', 'van UT', 'maurits@exampe.com', 0628244529, 'Y', timestamp '2023-04-12 09:05:00', timestamp '2023-04-13 09:05:00'),
+    (2, 102, 'Arthur', 'van UT', 'arthur@exampe.com', 0628244529, 'Y', timestamp '2023-04-12 19:05:00', timestamp '2023-04-13 09:25:00'),
     (3, 103, 'Eelco', 'van Vliet', 'EelcoVanVliet@example.com', 0628927319, 'N', timestamp '2023-04-12 14:10:00', timestamp '2023-04-13 09:15:00');
 
 
