@@ -1,9 +1,10 @@
 package soa.location.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import soa.location.model.Location;
 import soa.location.repository.LocationRepository;
+<<<<<<< HEAD
 import soa.location.responses.LocationResponse;
 import org.springframework.http.ResponseEntity;
 import java.util.List;
@@ -11,11 +12,18 @@ import java.util.Optional;
 import java.math.BigDecimal;
 
 @RestController
+=======
+import org.springframework.ui.Model;
+
+@Controller
+@RequestMapping("/")
+>>>>>>> 3a7a2284ca75d721345cbb91173cefbe2f35ece9
 public class LocationController {
 
     @Autowired
     LocationRepository locationRepository;
 
+<<<<<<< HEAD
     @GetMapping("/locations")
     public List<Location> getLocations() {
         return locationRepository.findAll();
@@ -82,5 +90,11 @@ public class LocationController {
         } else {
             return false;
         }
+=======
+    @GetMapping("/dashboard")
+    public String dashboard(Model model) {
+        model.addAttribute("locations", locationRepository.findAll());
+        return "dashboard";
+>>>>>>> 3a7a2284ca75d721345cbb91173cefbe2f35ece9
     }
 }
