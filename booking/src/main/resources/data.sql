@@ -1,3 +1,12 @@
+INSERT INTO Rental (StaffID, CustomerID, InventoryID, Rental_StartDate, Rental_EndDate, Last_Update) VALUES
+(1, 1, 1, timestamp '2023-04-12 09:05:00', timestamp '2023-04-16 12:00:00', NOW()),
+(2, 2, 2, timestamp '2023-04-14 12:00:00', timestamp '2023-04-16 12:00:00', NOW()),
+(3, 3, 3, timestamp '2023-04-15 12:00:00', timestamp '2023-04-17 12:00:00', NOW()),
+(4, 4, 4, timestamp '2023-04-16 12:00:00', timestamp '2023-04-18 12:00:00', NOW()),
+(5, 5, 5, timestamp '2023-04-17 12:00:00', timestamp '2023-04-19 12:00:00', NOW());
+
+
+/* 
 INSERT INTO booking (booking_id, booking_date, status) VALUES
 (1001, '2022-04-10', 'confirmed'),
 (1002, '2022-05-05', 'pending'),
@@ -31,4 +40,4 @@ VALUES
 (7, 'Dubai', 150, true),
 (8, 'Cape Town', 70, false),
 (9, 'Amsterdam', 85, true),
-(10, 'Hong Kong', 130, false);
+(10, 'Hong Kong', 130, false); */

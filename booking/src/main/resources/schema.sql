@@ -1,14 +1,10 @@
-CREATE TABLE booking (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    booking_id INT NOT NULL,
-    booking_date DATE NOT NULL,
-    status VARCHAR(50) NOT NULL
-);
+CREATE TABLE Rental (
+  ID               int(10) NOT NULL AUTO_INCREMENT, 
+  StaffID          int(10) NOT NULL, 
+  CustomerID       int(10) NOT NULL, 
+  InventoryID      int(10) NOT NULL, 
+  Rental_StartDate timestamp NULL, 
+  Rental_EndDate   timestamp NULL, 
+  Last_Update      timestamp NULL, 
+  PRIMARY KEY (ID));
 
-CREATE TABLE location (
-    id SERIAL PRIMARY KEY,
-    location_id INTEGER NOT NULL,
-    location_name VARCHAR(255) NOT NULL,
-    standard_price INTEGER NOT NULL,
-    is_available BOOLEAN NOT NULL
-);

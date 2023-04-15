@@ -10,6 +10,7 @@ import soa.location.repository.LocationRepository;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
+import soa.location.responses.LocationResponse;
 
 @RestController
 public class LocationRestController {
@@ -17,11 +18,16 @@ public class LocationRestController {
     @Autowired
     LocationRepository locationRepository;
 
-    @GetMapping("/locations")
+ /*    @GetMapping("/locations")
     public List<Location> getLocations() {
         return locationRepository.findAll();
     }
-
+ */
+    @GetMapping("/locations")
+    public LocationResponse getAllLocations(){
+        return new LocationResponse(locationRepository.findAll());
+    }
+    
     @GetMapping("/locations/{id}")
     public Location getLocation(@PathVariable Integer id) {
         return locationRepository.findById(id).get();

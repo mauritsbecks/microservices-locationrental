@@ -1,64 +1,36 @@
 package com.booking.booking.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Date;
+import com.booking.booking.model.Customer;
+import com.booking.booking.model.Location;
+import com.booking.booking.model.Rental;
 
-@Entity
 public class Booking {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    
-    private int bookingId;
-    
-    private Date bookingDate;
-    
-    private String status;
+    private Customer customer;
+    private Location location;
+    private Rental rental;
 
-    // Default constructor
-    public Booking() {}
+    public Booking(Rental rental) {
+        this.rental = rental;
+    }
 
-    // Constructor with parameters
-    public Booking(int bookingId, Date bookingDate, String status) {
-        this.bookingId = bookingId;
-        this.bookingDate = bookingDate;
-        this.status = status;
+    public Rental getRental() {
+        return rental;
     }
-    
-    // Getter and setter methods
-    public Long getId() {
-        return id;
+
+    public Customer getCustomer() {
+        return customer;
     }
-    
-    public void setId(Long id) {
-        this.id = id;
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
-    
-    public int getBookingId() {
-        return bookingId;
+
+    public Location getLocation() {
+        return location;
     }
-    
-    public void setBookingId(int bookingId) {
-        this.bookingId = bookingId;
-    }
-    
-    public Date getBookingDate() {
-        return bookingDate;
-    }
-    
-    public void setBookingDate(Date bookingDate) {
-        this.bookingDate = bookingDate;
-    }
-    
-    public String getStatus() {
-        return status;
-    }
-    
-    public void setStatus(String status) {
-        this.status = status;
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }
