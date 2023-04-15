@@ -1,6 +1,7 @@
 package com.crm.crm.entity;
 
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 public class CustomerResponse {
     private List<Customer> customers;
