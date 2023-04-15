@@ -1,9 +1,11 @@
 package soa.location.controller;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import soa.location.model.Location;
 import soa.location.repository.LocationRepository;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,14 +26,9 @@ public class LocationRestController {
     }
 
     @RequestMapping(value = "/locations", headers="Content-Type=application/x-www-form-urlencoded", method = RequestMethod.POST)
-    public Location saveLocation(@ModelAttribute Location location) {
-        return locationRepository.save(location);
-    }
-
-    @PutMapping("/locations/{id}")
-    public boolean editLocation(@PathVariable Long id) {
-        // TODO IMPLEMENT
-        return false;
+    public void saveLocation(HttpServletResponse response, @ModelAttribute Location location) throws IOException {
+        locationRepository.save(location);
+        response.sendRedirect("/dashboard");
     }
 
     @DeleteMapping("/locations/{id}")

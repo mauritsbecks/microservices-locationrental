@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Entity
 public class Location implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // was AUTO, did not work
     private Long id;
 
     private String name;
