@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoices</title>
+</head>
+<body>
+
+  <section class="section">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        <table class="table is-fullwidth is-striped is-hoverable">
+          <thead>
+          <tr>
+            <td>Id</td>
+            <td>Amount</td>
+            <td>Payment Date</td>
+            <td>Status</td>
+          </tr>
+          </thead>
+          <tbody>
+            <tr th:each="invoice: ${invoices}">
+              <th th:text="${invoice.ID}">id</th>
+              <td>
+                <span>&euro;</span>
+                <span th:text="${invoice.amount}"></span>
+              </td>
+<!--              <td th:text="${invoice.Payment_Date}">payment-date</td>-->
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

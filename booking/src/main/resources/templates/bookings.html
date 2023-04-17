@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+<section class="section">
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <table class="table is-fullwidth is-striped is-hoverable">
+        <thead>
+        <tr>
+          <td>#</td>
+          <td>Location</td>
+          <td>Customer</td>
+          <td>Period</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="booking, iStat: ${bookings}">
+          <th th:text="${iStat.index}">id</th>
+          <td th:text="${booking.location.name}">name</td>
+          <td th:text="${booking.customer.email}">customer</td>
+          <td style="display: flex; flex-direction: column;">
+            <span th:text="${booking.rental.rental_StartDate}"></span>
+            <span th:text="${booking.rental.rental_EndDate}"></span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<script>
+
+</script>
+</body>
+</html>

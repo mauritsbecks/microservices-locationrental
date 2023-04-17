@@ -34,7 +34,7 @@ public class LocationRestController {
     }
 
     @PostMapping("/locations")
-    public ResponseEntity<String> createLocation(@RequestBody Location location) {
+    public ResponseEntity<String> createLocation(Location location) {
         Location savedLocation = locationRepository.save(location);
         return ResponseEntity.ok("Location created with ID: " + savedLocation.getID());
     }

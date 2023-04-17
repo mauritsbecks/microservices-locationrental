@@ -9,67 +9,65 @@ import javax.persistence.Id;
 public class Invoice {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int ID;
 
-    private String invoiceId;
+    private int RentalID;
 
-    private String customerId;
+    private int CustomerID;
 
-    private String bookingId;
+    private int StaffID;
 
-    private String status;
+    private Double amount;
 
-    private Double totalPrice;
+    private String Payment_Date;
 
-    // Getters
-    public Long getId() {
-        return id;
+
+    public int getID() {
+        return ID;
     }
 
-    public String getInvoiceId() {
-        return invoiceId;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
-    public String getCustomerId() {
-        return customerId;
+    public int getRentalID() {
+        return RentalID;
     }
 
-    public String getBookingId() {
-        return bookingId;
+    public void setRentalID(int rentalID) {
+        RentalID = rentalID;
     }
 
-    public String getStatus() {
-        return status;
+    public int getCustomerID() {
+        return CustomerID;
     }
 
-    public Double getTotalPrice() {
-        return totalPrice;
+    public void setCustomerID(int customerID) {
+        CustomerID = customerID;
     }
 
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
+    public int getStaffID() {
+        return StaffID;
     }
 
-    public void setInvoiceId(String invoiceId) {
-        this.invoiceId = invoiceId;
+    public void setStaffID(int staffID) {
+        StaffID = staffID;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public Double getAmount() {
+        return amount;
     }
 
-    public void setBookingId(String bookingId) {
-        this.bookingId = bookingId;
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public String getPayment_Date() {
+        return Payment_Date;
     }
 
-    public void setTotalPrice(Double totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setPayment_Date(String payment_Date) {
+        Payment_Date = payment_Date;
     }
-
 }

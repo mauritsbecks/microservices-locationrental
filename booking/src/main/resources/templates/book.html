@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make a new booking</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+
+<section class="section">
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <form action="#" th:action="@{/api/bookings}" method="POST">
+          <div class="field">
+              <label class="label">Customer</label>
+              <div class="control">
+                  <div class="select">
+                      <select name="customerId">
+                          <option th:each="customer: ${customers}" th:text="${customer.first_Name}" th:value="${customer.ID}">customer</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+
+          <div class="field">
+              <label class="label">Location</label>
+              <div class="control">
+                  <div class="select">
+                      <select name="locationId">
+                          <option th:each="location: ${locations}" th:text="${location.name}" th:value="${location.ID}">location</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+
+          <div class="field">
+              <label class="label">Start</label>
+              <div class="control">
+                  <input class="input" name="Start_Date" type="datetime-local" placeholder="">
+              </div>
+          </div>
+
+          <div class="field">
+              <label class="label">End</label>
+              <div class="control">
+                  <input class="input" name="End_Date" type="datetime-local" placeholder="">
+              </div>
+          </div>
+
+          <input type="hidden" name="staffId" value="1">
+          <input type="hidden" name="inventoryId" value="1">
+<!--          <input type="hidden" name="Last_Update" th:value="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}">-->
+
+          <div class="field">
+              <button type="submit" class="button is-primary">
+                  Make booking
+              </button>
+          </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -35,8 +35,6 @@ public class RentalAssembler {
     private static final String LOCATION_SERVICE_ID = "locationApp";
     private static final String LOCATION_SERVICE_ENDPOINT = "/location-service/locations";
 
-
-
     public List<Booking> getCustomerRentals(){
         ResponseEntity<CustomerResponse> customerResponse = restTemplate.exchange(
                 getServiceURL(CUSTOMER_SERVICE_ID,CUSTOMER_SERVICE_ENDPOINT),

@@ -1,9 +1,9 @@
 INSERT INTO Rental (StaffID, CustomerID, InventoryID, Rental_StartDate, Rental_EndDate, Last_Update) VALUES
 (1, 1, 1, timestamp '2023-04-12 09:05:00', timestamp '2023-04-16 12:00:00', NOW()),
 (2, 2, 2, timestamp '2023-04-14 12:00:00', timestamp '2023-04-16 12:00:00', NOW()),
-(3, 3, 3, timestamp '2023-04-15 12:00:00', timestamp '2023-04-17 12:00:00', NOW()),
-(4, 4, 4, timestamp '2023-04-16 12:00:00', timestamp '2023-04-18 12:00:00', NOW()),
-(5, 5, 5, timestamp '2023-04-17 12:00:00', timestamp '2023-04-19 12:00:00', NOW());
+(3, 2, 3, timestamp '2023-04-15 12:00:00', timestamp '2023-04-17 12:00:00', NOW()),
+(4, 2, 4, timestamp '2023-04-16 12:00:00', timestamp '2023-04-18 12:00:00', NOW()),
+(5, 1, 5, timestamp '2023-04-17 12:00:00', timestamp '2023-04-19 12:00:00', NOW());
 
 
 /* 

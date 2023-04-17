@@ -18,7 +18,6 @@
                     <td>Name</td>
                     <td>Description</td>
                     <td>Price</td>
-<!--                    <td>Address</td>-->
                 </tr>
                 </thead>
                 <tbody>
@@ -30,13 +29,6 @@
                         <span>&euro;</span>
                         <span th:text="${location.rental_Rate}"></span>
                     </td>
-<!--                    <td style="display:flex;flex-direction: column;">-->
-<!--                        <span>-->
-<!--                            <span th:text="${location.street}"></span>-->
-<!--                            <span th:text="${location.number}"></span>-->
-<!--                        </span>-->
-<!--                        <span th:text="${location.city}"></span>-->
-<!--                    </td>-->
                     <td>
                         <button type="button" th:onclick="'javascript:deleteLocation(' + ${location.ID} + ');'">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
@@ -48,7 +40,7 @@
         </div>
 
         <div class="column is-one-third">
-            <form action="#" th:action="@{/locations}" method="POST">
+            <form action="#" th:action="@{/locations}" method="POST" enctype="application/x-www-form-urlencoded">
                 <div class="field">
                     <label class="label">Name</label>
                     <div class="control">
@@ -61,37 +53,26 @@
                         <input class="input" name="description" type="text" placeholder="Big lecture room">
                     </div>
                 </div>
-<!--                <div class="field">-->
-<!--                    <label class="label">Capacity</label>-->
-<!--                    <div class="control">-->
-<!--                        <input class="input" name="capacity" type="number" placeholder="50">-->
-<!--                    </div>-->
-<!--                </div>-->
+
                 <div class="field">
-                    <label class="label">Price</label>
+                    <label class="label">Special Features</label>
                     <div class="control">
-                        <input class="input" name="price" type="number" placeholder="100">
+                        <textarea name="Special_Features"></textarea>
                     </div>
-                    <p class="help">Price / hour</p>
                 </div>
-<!--                <div class="field is-grouped">-->
-<!--                    <label class="label" style="margin-right: 1rem;">Street</label>-->
-<!--                    <div class="control">-->
-<!--                        <input class="input" name="street" type="text" placeholder="Drienerlolaan">-->
-<!--                    </div>-->
-<!--                    <div class="control">-->
-<!--                        <input class="input" name="number" type="number" placeholder="1">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="field">-->
-<!--                    <label class="label">City</label>-->
-<!--                    <div class="control">-->
-<!--                        <input class="input" name="city" type="text" placeholder="Enschede">-->
-<!--                    </div>-->
-<!--                </div>-->
+
+                <div class="field">
+                    <label class="label">Full Text</label>
+                    <div class="control">
+                        <textarea name="Fulltext"></textarea>
+                    </div>
+                </div>
+
+                <input type="hidden" name="rating" value="5">
+
                 <div class="field">
                     <button class="button is-primary" type="submit">
-                        Save
+                        Add location
                     </button>
                 </div>
             </form>
@@ -101,7 +82,7 @@
 
 <script>
     async function deleteLocation(id) {
-        const response = await fetch('/locations/' + id, {
+        const response = await fetch('/location-service/locations/' + id, {
             method: "DELETE"
         }).then(() => {
             location.reload();

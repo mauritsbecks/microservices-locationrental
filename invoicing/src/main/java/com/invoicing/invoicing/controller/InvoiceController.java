@@ -1,22 +1,22 @@
 package com.invoicing.invoicing.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.invoicing.invoicing.entity.InvoiceResponse;
 import com.invoicing.invoicing.repository.InvoiceRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-
-@RestController
+@Controller
+@RequestMapping("")
 public class InvoiceController {
 
     @Autowired
     InvoiceRepository invoiceRepository;
 
     @GetMapping("/invoices")
-    public InvoiceResponse getAllInvoices(){
-        return new InvoiceResponse(invoiceRepository.findAll());
+    public String invoices(Model model) {
+        model.addAttribute("invoices", invoiceRepository.findAll());
+        return "invoices";
     }
-    
 }
